@@ -55,6 +55,8 @@ body {
   background-color: #094a62;
   height: 964px;
   overflow: hidden;
+  position: relative;
+  
 }
 
 .banner-img {
@@ -64,6 +66,32 @@ body {
   display: block;
 }
 
+.banner-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  
+}
+
+.banner-logo {
+  width: 500px;
+  object-fit: contain;
+  filter: drop-shadow(2px 0px 0px white) drop-shadow(-2px 0px 0px white) drop-shadow(0px 4px 0px white) drop-shadow(0px -4px 0px white) drop-shadow(3.5px 3.5px 0px white) drop-shadow(-3.5px 3.5px 0px white) drop-shadow(3.5px -3.5px 0px white) drop-shadow(-3.5px -3.5px 0px white) drop-shadow(0px 0px 50px rgba(0, 0, 0, 0.2));
+}
+
+.banner-title {
+  font-family: "Monomaniac One", sans-serif;
+  font-size: 96px;
+  color: white;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  filter: drop-shadow(0px 0px 50px rgba(0, 0, 0, 0.2));
+}
+
 .content_section {
   color: white;
   background-color: #006E7D;
@@ -71,7 +99,6 @@ body {
   padding: 100px 0;
   text-align: left;
   height: 600px;
-  box-shadow: 0px -10px 0px #d4ecf2;
 }
 
 .content_section .content {
@@ -339,6 +366,52 @@ body > .content_text {
   background-color: #ffffff;
 }
 
+.hamburger-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  background: none;
+  border: none;
+  text-decoration: none;
+}
+
+.hamburger-icon span {
+  width: 25px;
+  height: 3px;
+  background-color: #2b2b2b;
+  border-radius: 2px;
+
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+
+}
+
+.dropdown-content a {
+  color: #2b2b2b;
+  padding: 12px 20px;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 .icon {
   display: none;
   text-decoration: none;
@@ -349,30 +422,96 @@ body > .content_text {
 
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
+  .top-bar {
+    padding: 10px 0;
+  }
+
   .top-bar_container {
-    flex-direction: column;
-    gap: 15px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo img {
+    width: 70px !important;
+    height: 35px !important;
+  }
+
+  .hamburger-icon {
+    display: flex;
+  }
+
+  .navigation {
+    width: 100%;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    background-color: #ffffff;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.085);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .navigation.active {
+    max-height: 500px;
   }
 
   .navigation ul {
     flex-direction: column;
-    gap: 10px;
-    text-align: center;
+    gap: 0;
+    padding: 15px 0;
+  }
+
+  .navigation li {
+    border-bottom: 1px solid #e8e8e8;
+    padding: 0;
+    background-color: #f5f5f5;
+    border-left: 3px solid #00a5bb;
   }
 
   .navigation a {
     font-size: 16px;
+    padding: 15px 20px;
+    display: block;
+    width: 100%;
+  }
+
+  .dropdown.active .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content a {
+    padding: 12px 30px;
+    font-size: 14px;
   }
 
   .banner {
-    height: 400px;
-    margin-top: 120px;
+    height: 300px;
+    margin-top: 80px;
   }
 
   .banner-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  .banner-overlay {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .banner-logo {
+    width: 400px;
+    height: 200px;
+    margin-bottom: -80px;
+    filter: drop-shadow(2px 0px 0px white) drop-shadow(-2px 0px 0px white) drop-shadow(0px 2px 0px white) drop-shadow(0px -2px 0px white) drop-shadow(1.4px 1.4px 0px white) drop-shadow(-1.4px 1.4px 0px white) drop-shadow(1.4px -1.4px 0px white) drop-shadow(-1.4px -1.4px 0px white) drop-shadow(0px 0px 50px rgba(0, 0, 0, 0.2));
+  }
+
+  .banner-title {
+    font-size: 48px;
+    text-align: center;
   }
 
   .content_section {
@@ -386,30 +525,35 @@ body > .content_text {
   }
 
   .content_section .content_title {
-    font-size: 48px;
-    margin: 0 0 15px;
+    font-size: 36px;
+    margin: 20px 0 15px;
   }
 
   .content_section .content_text {
-    font-size: 16px;
+    font-size: 14px;
     margin: 0 0 20px;
     max-width: 100%;
   }
 
   .learn-more {
     width: 100%;
-    max-width: 300px;
-    font-size: 20px;
-    padding: 10px 15px;
+    max-width: 280px;
+    font-size: 16px;
+    padding: 8px 15px;
     height: auto;
   }
 
+  .arrow {
+    font-size: 36px;
+    margin-top: -5px;
+  }
+
   .image-frame {
-    box-shadow: 0px 0px 50px 10px rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 30px 5px rgba(255, 255, 255, 0.1);
     position: static;
     width: 100%;
-    max-width: 500px;
-    height: 300px;
+    max-width: 400px;
+    height: 250px;
     margin: 30px auto 0;
     right: auto;
     top: auto;
@@ -420,23 +564,23 @@ body > .content_text {
   }
 
   .latest_title {
-    font-size: 48px;
-    margin-bottom: 40px;
+    font-size: 36px;
+    margin-bottom: 30px;
   }
 
   .feature-container {
     flex-direction: column;
     gap: 20px;
-    padding: 0 20px;
+    padding: 0 15px;
   }
 
   .card {
-    width: 90%;
+    width: 100%;
     height: auto;
   }
 
   .feature-card {
-    width: 90%;
+    width: 100%;
     height: auto;
   }
 
@@ -451,38 +595,36 @@ body > .content_text {
   .decorative-rectangles {
     display: none !important;
   }
-  .icon {
-    display: block;
-    position: absolute;
-    right: 20px;
-    top: 15px;
-  }
-
-  .navigation ul {
-    display: none; 
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    padding: 20px 0;
-  }
-
-  .navigation.responsive ul {
-    display: flex;
-  }
-
-  .top-bar_container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
 
   .bottom-bar {
     flex-direction: column;
     gap: 15px;
+    padding: 20px 15px;
+  }
+
+  .bottom-bar p {
+    font-size: 14px;
   }
 
   .social-media {
     width: 100%;
     justify-content: center;
+  }
+
+  .social-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  .content_text {
+    font-size: 14px;
+  }
+  #get_involved {
+    margin-top:50px;
   }
 
 }
