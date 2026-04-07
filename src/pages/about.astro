@@ -37,7 +37,7 @@ import groupPhoto2 from '../assets/IMG_1324.jpg';
 					and competition costs, while connecting with top student talent at UBCO. 
 					If your organization is interested in supporting our work, we'd love to chat.
 				</p>
-				<button class="learn-more" onclick="window.location.href='/sponsors'">
+				<button class="learn-more" onclick={`window.location.href='${(import.meta.env.BASE_URL || "") + "/sponsors"}'`}>
 					Sponsorship Info
 					<span class="arrow">→</span>
 				</button>
