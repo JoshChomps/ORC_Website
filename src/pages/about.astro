@@ -10,38 +10,35 @@ import groupPhoto2 from '../assets/IMG_1324.jpg';
 	<Header />
 	
 	<main style="margin-top: 80px;">
-		<section class="content_section">
+		<section class="content_section about-hero">
 			<div class="content">
-				<h1 class="content_title">About Us</h1>
-				<p class="content_text">
-					Originally a shared dream of a few classmates, Okanagan Rover Craft was formally established in October
-					of 2025, and has been firing on all cylinders ever since. Okanagan Rover Craft is composed of a
-					community of young professionals with a team goal to build the best rover possible to compete at the
-					Canadian International Robotics Challenge (CIRC). Okanagan Rover Craft is more than just a project, it’s
-					an opportunity to build relationships, grow as professionals, and have fun. Okanagan Rover Craft is
-					always looking for skilled and enthusiastic new members, reach out to us to learn more about the
-					Okanagan Rovercraft team!
-				</p>
+				<div class="about-hero-text">
+					<h1 class="content_title">About the Team</h1>
+					<p class="content_text">
+						Okanagan Rover Craft started as a shared project between a few classmates and officially launched in late 2025. 
+						We're a team of students focused on designing and building a rover for the 
+						Canadian International Robotics Challenge (CIRC). For us, it's more than just a competition, it's about 
+						professional growth, practical engineering, and building something cool together. 
+						We're always looking for new members, so feel free to reach out if you're interested in joining.
+					</p>
+				</div>
 				<div class="image-frame">
-					<Image src={groupPhoto2} alt="Group Photo" loading="eager" width={1200} quality="high" />
+					<Image src={groupPhoto2} alt="Team Photo" loading="eager" width={1200} quality="high" />
 				</div>
 			</div>
 		</section>
 
-		<section class="content_section" id="get_involved" style="min-height: auto; padding: 80px 0;">
-			<div class="content" style="margin-top:-60px">
+		<section class="content_section" id="get_involved" style="min-height: auto; padding: 60px 0;">
+			<div class="content">
 				<h2>How to get involved</h2>
 				<p class="content_text">
-					Looking to get involved in the future of Okanagan Rover Craft? We are always looking for passionate
-					collaborators to join our mission. If you represent an organization looking to empower a team of young
-					professionals, our outreach team would be thrilled to discuss the benefits of partnering with Okanagan
-					Rover Craft with you! Sponsoring our team provides your organization with brand visibility while
-					directly supporting our team's goals. A partnership with Okanagan Rover Craft allows you to connect with
-					top student talent in STEM fields and support both our craft, and our team's future. If you are
-					interested in supporting us, check out our sponsorship page!
+					We're always looking for passionate collaborators and partners to support our mission. 
+					By sponsoring Okanagan Rover Craft, you're directly helping us with prototyping, testing, 
+					and competition costs, while connecting with top student talent at UBCO. 
+					If your organization is interested in supporting our work, we'd love to chat.
 				</p>
-				<button class="learn-more" id="sponsor_button" onclick="window.location.href='/sponsors'">
-					Learn More
+				<button class="learn-more" onclick="window.location.href='/sponsors'">
+					Sponsorship Info
 					<span class="arrow">→</span>
 				</button>
 			</div>

@@ -1,9 +1,7 @@
 ---
 ---
 <footer class="bottom-bar">
-    <p style="font-family: var(--font-body); color: var(--color-stardust);">Email: outreach@okanaganrovercraft.ca &nbsp; &nbsp;&nbsp;
-Location: 3272 University Way, UNC 133&nbsp; &nbsp;&nbsp;
-Kelowna, V1V 1V7</p>
+    <p class="footer-text">Email: outreach@okanaganrovercraft.ca &nbsp;&nbsp; Location: 3272 University Way, UNC 133, Kelowna, V1V 1V7</p>
     <div class="social-media">
         <a href="https://ca.linkedin.com/company/okanagan-rover-craft" target="_blank" aria-label="LinkedIn">
             <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -19,15 +17,50 @@ Kelowna, V1V 1V7</p>
 </footer>
 
 <style>
+    .bottom-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 30px;
+        border-top: 1px solid var(--glass-border);
+        background: rgba(2, 4, 8, 0.7);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+    }
+
+    .footer-text {
+        font-family: var(--font-body);
+        color: var(--color-stardust);
+        font-size: 0.9rem;
+        margin: 0;
+    }
+
+    .social-media {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
+
     .social-icon {
+        width: 32px;
+        height: 32px;
         color: var(--color-star);
         opacity: 0.8;
         transition: var(--transition);
     }
+
     .social-icon:hover {
         color: var(--color-nebula);
         opacity: 1;
         transform: scale(1.1);
         filter: drop-shadow(var(--glow-nebula));
+    }
+
+    @media (max-width: 1024px) {
+        .bottom-bar {
+            flex-direction: column;
+            gap: 16px;
+            text-align: center;
+        }
     }
 </style>

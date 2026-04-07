@@ -30,23 +30,23 @@ const groups = [
 
 		<main>
 			<section class="gallery-hero">
-				<h1 class="gallery-title">Mission Archive</h1>
-				<p class="gallery-subtitle">A collection of moments from our journey to build the next generation of rovers.</p>
+				<h1 class="gallery-title">Photos & Videos</h1>
+				<p class="gallery-subtitle">A collection of shots from the workshop and the field.</p>
 			</section>
 
 			<section class="gallery-content">
-                {groups.map(group => (
+                {groups.map(g => (
                     <div class="gallery-group">
                         <div class="group-header">
-                            <h2 class="group-title">{group.title}</h2>
-                            <p class="group-description">{group.description}</p>
+                            <h2 class="group-title">{g.title}</h2>
+                            <p class="group-description">{g.description}</p>
                         </div>
                         
                         <div class="gallery-grid">
-                            {group.items.map(item => (
+                            {g.items.map(i => (
                                 <div class="gallery-card placeholder">
                                     <div class="card-media">
-                                        {item.type === 'video' ? (
+                                        {i.type === 'video' ? (
                                             <div class="play-icon">▶</div>
                                         ) : (
                                             <div class="photo-icon">📷</div>
@@ -54,8 +54,8 @@ const groups = [
                                         <div class="overlay">Coming Soon</div>
                                     </div>
                                     <div class="card-info">
-                                        <span class="item-type">{item.type}</span>
-                                        <h3 class="item-label">{item.label}</h3>
+                                        <span class="item-type">{i.type}</span>
+                                        <h3 class="item-label">{i.label}</h3>
                                     </div>
                                 </div>
                             ))}
@@ -82,7 +82,7 @@ const groups = [
     .gallery-title {
         font-family: var(--font-title);
         font-size: clamp(2.5rem, 6vw, 4.5rem);
-        color: var(--color-star);
+        color: var(--color-nebula);
         margin-bottom: 20px;
         text-transform: uppercase;
         letter-spacing: 0.1em;

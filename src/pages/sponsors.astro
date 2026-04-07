@@ -15,55 +15,49 @@ import '../styles/sponsors.css';
 	<Header />
 	
 	<main style="margin-top: 80px;">
-		<section class="content_section" id="CS1" style="height:45%">
+		<section class="content_section sponsor-hero">
 			<div class="content">
-				<h2>Sponsors don’t just help us build rovers,<br> they build future professionals. </h2>
-				<p class="content_text">
-					Through contributions of
-					materials, expertise, and financial support, our sponsors help students gain experience in design,
-					engineering, business, and science. Financial and material contributions go directly to prototyping,
-					designing, manufacturing, testing, and travel, allowing Okanagan Rover Craft to build a competitive
-					rover for a world-class competition.
-					We are incredibly grateful to our current sponsors who have already invested in the future of STEM
-					professionals. Your contributions make an incredible difference and are truly appreciated.
-				</p>
+				<div class="sponsor-hero-text">
+					<h2>Our sponsors help us build both rovers and careers.</h2>
+					<p class="content_text">
+						Contributions of materials, expertise, and funding allow our team to prototype, test, and compete at a world-class level. 
+						We're incredibly grateful to the organizations that invest in our growth and the future of student-led engineering.
+					</p>
+				</div>
 				<div class="image-frame">
-					<Image src={groupPhoto3} alt="Group Photo" loading="eager" width={1200} quality="high" />
+					<Image src={groupPhoto3} alt="Team at Competition" loading="eager" width={1200} quality="high" />
 				</div>
 			</div>
 		</section>
 
-		<div id="sponser-cont" style="padding-top:20px;padding-bottom:40px;">
-			<h2>Our Sponsors</h2>
-			<p>Thank you for supporting our team!</p>
-			<div class="sponser-items">
-				<div class="sponser-display">
-					<div class="sponser-img"><Image src={altarLogo} alt="Altar Metal Fab Co." loading="lazy" /></div>
+		<div class="sponsor-container">
+			<h2>Current Partners</h2>
+			<p>Thank you for supporting Okanagan Rover Craft.</p>
+			<div class="sponsor-list">
+				<div class="sponsor-card">
+					<div class="sponsor-logo"><Image src={altarLogo} alt="Altar Metal Fab Co." loading="lazy" /></div>
 					<p>Altar Metal Fab Co.</p>
 				</div>
-				<div class="sponser-display">
-					<div class="sponser-img"><Image src={polymakerLogo} alt="Polymaker" loading="lazy" /></div>
+				<div class="sponsor-card">
+					<div class="sponsor-logo"><Image src={polymakerLogo} alt="Polymaker" loading="lazy" /></div>
 					<p>Polymaker</p>
 				</div>
-				<div class="sponser-display">
-					<div class="sponser-img"><Image src={stepperLogo} alt="Stepper Online" loading="lazy" /></div>
+				<div class="sponsor-card">
+					<div class="sponsor-logo"><Image src={stepperLogo} alt="Stepper Online" loading="lazy" /></div>
 					<p>Stepper Online</p>
 				</div>
 			</div>
 		</div>
 
-		<section class="content_section" id="CS2">
-			<div class="content" style="margin-top: -60px;">
+		<section class="content_section">
+			<div class="content">
 				<h2>How to get involved</h2>
-				<div class="content-flex" style="display: flex; gap: 30px; align-items: flex-start; ">
+				<div class="content-flex">
 					<p class="content_text">
-						Looking to get involved in the future of Okanagan Rover Craft? We are always looking for passionate
-						collaborators to join our mission. If you represent an organization looking to empower a team of young
-						professionals, our outreach team would be thrilled to discuss the benefits of partnering with Okanagan
-						Rover Craft with you! Sponsoring our team provides your organization with brand visibility while
-						directly supporting our team's goals. A partnership with Okanagan Rover Craft allows you to connect with
-						top student talent in STEM fields and support both our craft, and our team's future. If you are
-						interested in supporting us, get involved today by filling out our contact form or emailing us at
+						We are always looking for passionate partners to join our mission. 
+						Sponsoring our team provides your organization with brand visibility while 
+						directly supporting top student talent in STEM. 
+						If you're interested in collaborating, check out our package below or reach out to us at 
 						outreach@okanaganrovercraft.ca.
 					</p>
 					
@@ -78,7 +72,7 @@ import '../styles/sponsors.css';
 			</div>
 		</section>
 
-		<section style="padding: 80px 10%; background: transparent; backdrop-filter: blur(10px); border-top: 1px solid var(--glass-border);">
+		<section class="contact-section">
 			<ContactForm />
 		</section>
 	</main>

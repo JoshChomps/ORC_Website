@@ -1,20 +1,20 @@
-#sponser-cont {
+.sponsor-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 60px 20px;
     text-align: center;
 }
 
-#sponser-cont h2 {
+.sponsor-container h2 {
     font-family: var(--font-title);
     font-size: clamp(2rem, 4vw, 4rem);
     margin-bottom: 40px;
-    color: var(--color-star);
+    color: var(--color-nebula);
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
-.sponser-items {
+.sponsor-list {
     display: flex;
     flex-direction: row;
     gap: 20px;
@@ -22,8 +22,7 @@
     flex-wrap: wrap;
 }
 
-
-.sponser-display {
+.sponsor-card {
     width: 220px;
     height: 280px;
     display: flex;
@@ -42,13 +41,13 @@
     transition: var(--transition);
 }
 
-.sponser-display:hover {
+.sponsor-card:hover {
     transform: translateY(-5px);
     border-color: var(--color-nebula);
     box-shadow: var(--glow-nebula);
 }
 
-.sponser-img {
+.sponsor-logo {
     width: 180px;
     height: 180px;
     border-radius: 12px;
@@ -57,18 +56,21 @@
     background: rgba(255, 255, 255, 0.05);
 }
 
-.sponser-img img {
+.sponsor-logo img {
     width: 100%;
     height: 100%;
     object-fit: contain;
     padding: 10px;
 }
 
-#sep-bar {
-    height: 4px;
-    background: linear-gradient(90deg, transparent, var(--color-nebula), transparent);
-    margin: 40px 0;
+.contact-section {
+    padding: 80px 10%;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid var(--glass-border);
 }
+
 
 .content-flex {
     display: flex;
@@ -120,15 +122,6 @@
   color: var(--color-nebula);
 }
 
-#CS2 {
-  height: 400px !important;
-}
-      
-#CS1 .image-frame {
-  height: 400px;
-  width: 550px;
-  margin-top: 60px;
-}
 
 @media (max-width: 1024px) {
   .content-flex {
@@ -147,16 +140,8 @@
     display: none;
   }
 
-  #CS1 {
-    margin-top: 50px;
-  }
-  #CS2{
-    padding-top: 90px;
-  }
-
   .content {
     padding: 15px;
-    margin-top: 30px;
   }
 
   .pdf-button-container {
@@ -176,26 +161,52 @@
     margin-top: 50px;
   }
 
-  #sponser-cont {
+  .sponsor-container {
     padding: 0 10px;
   }
 
-  .sponser-display {
+  .sponsor-card {
     width: 120px;
     height: 170px;
     font-size: 12px;
   }
 
-  .sponser-img {
+  .sponsor-logo {
     width: 120px;
     height: 120px;
   }
-  SP_button {
-    width:80%
+
+  .sponsor-hero .image-frame {
+    height: 250px;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 20px;
   }
-  #CS1 .image-frame {
-  height: 200px;
-  width: 300px;
-  margin-top: -10px;
 }
+
+
+@media (min-width: 1025px) {
+  .sponsor-hero .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    padding: 60px 20px;
+  }
+
+  .sponsor-hero-text {
+    flex: 1.2;
+    max-width: 600px;
+  }
+
+  .sponsor-hero .image-frame {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    flex: 1;
+    width: 100%;
+    max-width: 500px;
+    height: 400px;
+  }
 }
