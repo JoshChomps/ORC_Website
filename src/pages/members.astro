@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/members.css';
+---
+
+<Layout title="Members - Okanagan Rovercraft">
+	<Header />
+	
+	<main style="margin-top: 150px; min-height: 60vh; text-align: center; padding: 0 20px;">
+		<h1 style="font-family: var(--font-title); font-size: clamp(3rem, 8vw, 5rem); color: var(--color-star); text-transform: uppercase; letter-spacing: 4px; margin-bottom: 2rem;">Our Team</h1>
+		<p style="font-family: var(--font-body); font-size: clamp(1.1rem, 2vw, 1.5rem); max-width: 800px; margin: 0 auto; color: var(--color-stardust);">Meet the brilliant minds behind Okanagan Rovercraft. We are a multidisciplinary team of engineering and science students from UBC Okanagan.</p>
+		
+		<div style="margin-top: 4rem; padding: 40px; background: var(--glass); border: 1px solid var(--glass-border); border-radius: 20px; display: inline-block; backdrop-filter: blur(10px);">
+			<p style="font-family: var(--font-header); color: var(--color-nebula); font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px;">[ Member profiles coming soon ]</p>
+		</div>
+	</main>
+
+	<Footer />
+</Layout>

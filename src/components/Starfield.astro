@@ -1,0 +1,131 @@
+---
+/**
+ * Starfield.astro
+ * A performant, pure CSS multi-layer twinkling starfield with colorful nebulas.
+ */
+---
+<div class="starfield-container">
+    <div class="nebula nebula-teal"></div>
+    <div class="nebula nebula-purple"></div>
+    <div class="nebula nebula-blue"></div>
+    
+    <div class="stars small"></div>
+    <div class="stars medium"></div>
+    <div class="stars large"></div>
+    <div class="stars stardust"></div>
+</div>
+
+<style is:global>
+    :root {
+        --star-color: #fff;
+        --twinkle-duration: 4s;
+    }
+
+    .starfield-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: #020408;
+        overflow: hidden;
+    }
+
+    /* Nebula Clouds */
+    .nebula {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        filter: blur(100px);
+        opacity: 0.15;
+        z-index: -1;
+        animation: nebula-drift 30s infinite alternate ease-in-out;
+    }
+
+    .nebula-teal {
+        background: radial-gradient(circle at 70% 20%, #00d1ff, transparent 40%);
+        top: -20%;
+        left: -10%;
+    }
+
+    .nebula-purple {
+        background: radial-gradient(circle at 20% 80%, #6d28d9, transparent 50%);
+        bottom: -20%;
+        right: -10%;
+        animation-delay: -5s;
+    }
+
+    .nebula-blue {
+        background: radial-gradient(circle at 50% 50%, #1e40af, transparent 40%);
+        top: 10%;
+        left: 20%;
+        opacity: 0.1;
+        animation-delay: -10s;
+    }
+
+    @keyframes nebula-drift {
+        0% { transform: scale(1) translate(0, 0) rotate(0deg); }
+        100% { transform: scale(1.2) translate(50px, 30px) rotate(5deg); }
+    }
+
+    /* Stars Base */
+    .stars {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 2px;
+        height: 2px;
+        background: transparent;
+    }
+
+    /* Stardust (New 4th layer) */
+    .stars.stardust {
+        width: 1px;
+        height: 1px;
+        opacity: 0.3;
+        box-shadow: 
+            546px 245px #fff, 1476px 141px #fff, 630px 1254px #fff,
+            1204px 772px #fff, 441px 1396px #fff, 1645px 521px #fff;
+    }
+
+    /* Small Stars Layer */
+    .stars.small {
+        width: 1px;
+        height: 1px;
+        box-shadow: 
+            446px 145px var(--star-color), 1276px 341px var(--star-color), 830px 1054px var(--star-color),
+            1404px 572px var(--star-color), 241px 1196px var(--star-color), 1845px 321px var(--star-color),
+            654px 443px var(--star-color), 112px 890px var(--star-color), 1543px 123px var(--star-color),
+            987px 678px var(--star-color), 345px 543px var(--star-color), 1234px 987px var(--star-color),
+            1678px 123px var(--star-color), 432px 1678px var(--star-color);
+        animation: twinkle var(--twinkle-duration) infinite ease-in-out;
+    }
+
+    /* Medium Stars Layer */
+    .stars.medium {
+        width: 2px;
+        height: 2px;
+        box-shadow: 
+            165px 243px var(--star-color), 1345px 678px var(--star-color), 876px 123px var(--star-color),
+            432px 1543px var(--star-color), 1987px 654px var(--star-color), 543px 987px var(--star-color),
+            123px 432px var(--star-color), 1111px 1543px var(--star-color);
+        animation: twinkle calc(var(--twinkle-duration) * 1.5) infinite ease-in-out;
+        opacity: 0.7;
+    }
+
+    /* Large Stars Layer */
+    .stars.large {
+        width: 3px;
+        height: 3px;
+        box-shadow: 
+            543px 1234px var(--star-color), 1111px 234px var(--star-color), 1654px 1543px var(--star-color);
+        animation: twinkle calc(var(--twinkle-duration) * 2) infinite ease-in-out;
+        opacity: 0.5;
+    }
+
+    @keyframes twinkle {
+        0%, 100% { opacity: 0.3; transform: scale(0.8); }
+        50% { opacity: 1; transform: scale(1.2); }
+    }
+</style>

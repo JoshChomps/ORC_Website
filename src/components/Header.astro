@@ -1,0 +1,96 @@
+---
+import { Image } from 'astro:assets';
+import logoSvg from '../assets/logo.svg';
+---
+
+<header class="top-bar">
+    <div class="top-bar_container">
+        <a href="/" class="logo">
+            <img src={logoSvg.src} alt="Logo" style="width: 100px; height: 50px; object-fit:cover; padding:0px; margin:0px">
+        </a>
+
+        <button class="hamburger-icon" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="navigation" id="navMenu">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+                <li><a href="/404">Projects</a></li>
+                <li><a href="/members">Members</a></li>
+                <li><a href="/404">Donate</a></li>
+                <li><a href="/sponsors">Sponsors</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<script>
+    function initializeMenu() {
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+        }
+
+        dropdowns.forEach(function (dropdown) {
+            const link = dropdown.querySelector('a');
+            if (link) {
+                link.addEventListener('click', function (e) {
+                    if (window.innerWidth <= 1024) {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                    }
+                });
+            }
+        });
+
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('.navigation a:not(.dropdown > a)');
+        navLinks.forEach(function (link) {
+            link.addEventListener('click', function () {
+                hamburger?.classList.remove('active');
+                navMenu?.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function (e) {
+            if (hamburger && navMenu && !hamburger.contains(e.target as Node) && !navMenu.contains(e.target as Node)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    }
+
+    // Initialize on page load
+    initializeMenu();
+</script>
+
+<style>
+    /* Ensure the hamburger button behaves correctly */
+    .hamburger-icon {
+        background: none;
+        border: none;
+        padding: 0;
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
+    
+    @media (max-width: 1024px) {
+        .hamburger-icon {
+            display: flex;
+        }
+    }
+</style>

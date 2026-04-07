@@ -1,12 +1,17 @@
 #sponser-cont {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 60px 20px;
     text-align: center;
 }
 
 #sponser-cont h2 {
-    margin-bottom: 30px;
+    font-family: var(--font-title);
+    font-size: clamp(2rem, 4vw, 4rem);
+    margin-bottom: 40px;
+    color: var(--color-star);
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .sponser-items {
@@ -19,33 +24,50 @@
 
 
 .sponser-display {
-    width: 200px;
-    height: 250px;
+    width: 220px;
+    height: 280px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-size: 14px;
-    font-weight: bold;
+    font-family: var(--font-header);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-star);
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 15px;
+    transition: var(--transition);
+}
+
+.sponser-display:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-nebula);
+    box-shadow: var(--glow-nebula);
 }
 
 .sponser-img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+    border-radius: 12px;
     overflow: hidden;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .sponser-img img {
     width: 100%;
     height: 100%;
-    object-fit:contain;
+    object-fit: contain;
+    padding: 10px;
 }
 
 #sep-bar {
-    height: 10px;
-    background-color: 094a62;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--color-nebula), transparent);
+    margin: 40px 0;
 }
 
 .content-flex {
@@ -59,7 +81,6 @@
   flex-direction: column;
   gap: 15px;
   align-items: center;
-  margin-right: -300px;
 }
 
 #sponsorship-pdf {
@@ -71,24 +92,32 @@
 .SP_button {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   border-radius: 40px;
-  padding: 10px 20px;
-  background-color: white;
-  color: 248db4;
-  font-size: 24px;
-  font-weight: 500;
+  padding: 12px 30px;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  color: var(--color-star);
+  font-family: var(--font-header);
+  font-size: 1.2rem;
+  font-weight: 600;
   cursor: pointer;
-  border: none;
-  transition: transform 0.2s ease;
-  width: 550px;
-  height: 52px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: var(--transition);
+  width: auto;
+  min-width: 300px;
+  height: auto;
   position: relative;
   text-decoration: none;
 }
 
 .SP_button:hover {
-  transform: scale(1.1);
-  box-shadow: 0px 0px 50px rgb(255, 237, 145,0.5);
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: var(--glow-nebula);
+  border-color: var(--color-nebula);
+  color: var(--color-nebula);
 }
 
 #CS2 {
@@ -101,7 +130,7 @@
   margin-top: 60px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1024px) {
   .content-flex {
     flex-direction: column;
     gap: 15px;

@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { Image } from 'astro:assets';
+import gearLogo from '../assets/gear-logo.png';
+import groupPhoto from '../assets/group_photo.jpg';
+---
+
+<Layout title="Okanagan Rovercraft - Home">
+	<div class="landing-page">
+		<Header />
+
+		<main>
+			<section class="banner">
+				<div class="banner-overlay">
+					<Image src={gearLogo} alt="Logo" class="banner-logo" style="height:fit-content" loading="eager" width={350} quality="high" />
+					<h1 class="banner-title">Okanagan Rovercraft</h1>
+				</div>
+			</section>
+
+			<section class="content_section">
+				<div class="decorative-rectangles" style="transform: scale(-1,-1); margin-top: -40px;">
+					<div class="rect rect-one"></div>
+					<div class="rect rect-two"></div>
+					<div class="rect rect-three"></div>
+				</div>
+				<div class="content">
+					<h1 class="content_title">Who Are We?</h1>
+					<p class="content_text">
+						Okanagan Rover Craft aims to foster an environment of continued learning in the robotics and mechatronics industry by building a rover to compete at the Canadian International Rover Challenge (CIRC)! We are a design-oriented student association at the University of British Columbia Okanagan, who design, build, and pilot mars-style rovers. Our organization seeks to provide a practical and fun experience to our members as we hone our skills as engineers and young professionals. Welcome to our website!
+					</p>
+					<button class="learn-more" onclick="window.location.href='/about'">
+						Learn More
+						<span class="arrow">→</span>
+					</button>
+					<div class="image-frame">
+						<Image src={groupPhoto} alt="Group Photo" loading="lazy" width={1000} quality="medium" />
+					</div>
+				</div>
+			</section>
+
+			<Footer />
+		</main>
+	</div>
+</Layout>

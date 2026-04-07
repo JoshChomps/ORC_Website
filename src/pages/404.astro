@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="404 - Page under construction">
+	<Header />
+	
+	<main style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 70vh; margin-top: 80px; text-align: center; padding: 0 20px;">
+		<h2 style="font-family: 'Michroma', sans-serif; font-size: clamp(2rem, 5vw, 4rem); color: var(--color-star); margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 2px;">
+			Mission Aborted: Page Not Found
+		</h2>
+		<h3 style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.2rem, 3vw, 2rem); color: var(--color-nebula); text-transform: uppercase; letter-spacing: 4px;">
+			Coordinates Unknown
+		</h3>
+		<a href="/" style="margin-top: 3rem; color: var(--color-star); text-decoration: none; font-family: var(--font-header); font-size: 1.1rem; border: 1px solid var(--glass-border); padding: 12px 30px; border-radius: 40px; background: var(--glass); transition: var(--transition); text-transform: uppercase;">Back to Mission Control</a>
+	</main>
+
+	<Footer />
+</Layout>
