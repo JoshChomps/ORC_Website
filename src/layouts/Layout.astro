@@ -1,5 +1,6 @@
 ---
 import StarfieldBackground from '../components/StarfieldBackground.astro';
+import ImageLightbox from '../components/ImageLightbox.astro';
 import '../styles/main.css';
 
 interface Props {
@@ -26,6 +27,7 @@ const { title = "Okanagan Rovercraft" } = Astro.props;
 	</head>
 	<body>
 		<StarfieldBackground />
+		<ImageLightbox />
 		<slot />
 	</body>
 </html>

@@ -2,23 +2,25 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { Image } from 'astro:assets';
+import gearLogo from '../assets/gear-logo.png';
+import groupPhoto from '../assets/group_photo.jpg';
+import groupPhoto2 from '../assets/IMG_1324.jpg';
 
 const groups = [
     {
         title: "The Rover",
         description: "Technical shots and field tests of our latest rover designs.",
         items: [
-            { type: 'photo', label: 'Field Test 2026' },
-            { type: 'photo', label: 'CAD Schematic' },
-            { type: 'video', label: 'Drive System Demo' }
+            { type: 'photo', label: 'Rover Logo Design', src: gearLogo },
+            { type: 'photo', label: 'Team Collaboration', src: groupPhoto }
         ]
     },
     {
         title: "Team & Events",
         description: "Photos from our workshops and team bonding sessions.",
         items: [
-            { type: 'photo', label: 'UBC Workshop' },
-            { type: 'photo', label: 'Recruitment Day' }
+            { type: 'photo', label: 'Field Testing', src: groupPhoto2 }
         ]
     }
 ];
@@ -44,14 +46,10 @@ const groups = [
                         
                         <div class="gallery-grid">
                             {g.items.map(i => (
-                                <div class="gallery-card placeholder">
+                                <div class="gallery-card" data-zoomable>
                                     <div class="card-media">
-                                        {i.type === 'video' ? (
-                                            <div class="play-icon">▶</div>
-                                        ) : (
-                                            <div class="photo-icon">📷</div>
-                                        )}
-                                        <div class="overlay">Coming Soon</div>
+                                        <Image src={i.src} alt={i.label} width={800} quality={100} />
+                                        <div class="overlay">Expand View</div>
                                     </div>
                                     <div class="card-info">
                                         <span class="item-type">{i.type}</span>
